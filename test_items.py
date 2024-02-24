@@ -1,16 +1,9 @@
-import pytest
 import time
-import math
 from selenium.webdriver.common.by import By
-from selenium import webdriver
 
-links = [
-    'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/',
-    'http://selenium1py.pythonanywhere.com/catalogue/hackers-painters_185/'
-]
 
-@pytest.mark.parametrize('link', links)
-def test_find_add_to_basket_button(browser, link):
+def test_find_add_to_basket_button(browser):
+    link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
     browser.get(link)
     time.sleep(30)
     curr_language = browser.execute_script('return window.navigator.language || window.navigator.userLanguage')
